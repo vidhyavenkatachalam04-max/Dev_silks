@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Vidhya's Saree Store</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>Vidhya's Saree Store</h1>
+    <div class="contact">
+      Contact: <input type="text" id="contact-number" value="+91-9876543210" />
+    </div>
+  </header>
+
+  <section class="upload-section">
+    <h2>Add a New Saree</h2>
+    <input type="file" id="image-upload" accept="image/*" />
+    <input type="text" id="saree-price" placeholder="Enter price (₹)" />
+    <select id="saree-color">
+      <option value="">Select Color</option>
+      <option value="Red">Red</option>
+      <option value="Blue">Blue</option>
+      <option value="Green">Green</option>
+      <option value="Yellow">Yellow</option>
+      <option value="Pink">Pink</option>
+    </select>
+    <button onclick="addSaree()">Add Saree</button>
+  </section>
+
+  <section class="filter-section">
+    <h2>Filter Sarees</h2>
+    <label>Color:
+      <select id="filter-color" onchange="filterSarees()">
+        <option value="">All</option>
+        <option value="Red">Red</option>
+        <option value="Blue">Blue</option>
+        <option value="Green">Green</option>
+        <option value="Yellow">Yellow</option>
+        <option value="Pink">Pink</option>
+      </select>
+    </label>
+    <label>Max Price (₹):
+      <input type="number" id="filter-price" oninput="filterSarees()" />
+    </label>
+  </section>
+
+  <section id="saree-gallery" class="gallery"></section>
+
+  <script src="script.js"></script>
+</body>
+</html>
