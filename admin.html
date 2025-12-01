@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Dev Pure Silks</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="header">
+    <div class="brand">
+      <h1>Dev Pure Silks</h1>
+      <p class="subtitle">Sri Lakshmi Saraswathi Pipes, Sowriyur PO, Salem Dt</p>
+      <p class="contact">Contact: (You will change)</p>
+    </div>
+    <nav class="nav">
+      <a href="admin.html" class="admin-link">Admin</a>
+      <button id="cart-toggle" class="cart-button">Cart (<span id="cart-count">0</span>)</button>
+    </nav>
+  </header>
+
+  <main class="container">
+    <section class="controls">
+      <div class="control-group">
+        <label for="sort-price">Sort by price:</label>
+        <select id="sort-price">
+          <option value="none">None</option>
+          <option value="asc">Low to High</option>
+          <option value="desc">High to Low</option>
+        </select>
+      </div>
+      <div class="control-group">
+        <label for="filter-color">Filter by color:</label>
+        <select id="filter-color">
+          <option value="all">All</option>
+        </select>
+      </div>
+      <div class="control-group search-group">
+        <label for="search-text">Search:</label>
+        <input type="text" id="search-text" placeholder="Search color or notes..." />
+      </div>
+      <button id="reset-filters" class="secondary">Reset</button>
+    </section>
+
+    <section id="product-grid" class="grid"></section>
+  </main>
+
+  <aside id="cart-panel" class="cart-panel">
+    <div class="cart-header">
+      <h2>Your Cart</h2>
+      <button id="cart-close" class="icon-button" aria-label="Close cart">✕</button>
+    </div>
+    <div id="cart-items" class="cart-items"></div>
+    <div class="cart-footer">
+      <div class="cart-total">
+        <span>Total:</span>
+        <strong id="cart-total">₹0</strong>
+      </div>
+      <button id="checkout-button" class="primary">Checkout</button>
+      <p class="checkout-note">Demo only: No payment. Cart persists in this browser.</p>
+    </div>
+  </aside>
+
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+  <script src="script.js"></script>
+  <script>
+    initShop();
+  </script>
+</body>
+</html>
